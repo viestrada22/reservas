@@ -61,6 +61,7 @@ pipeline {
         sonarqubeMasQualityGatesP(sonarKey:'co.com.ceiba.adn:reservas-victor.estrada',
         				sonarName:'CeibaADN-Reservas(victor.estrada)',
         				sonarPathProperties:'./sonar-project.properties')
+      }
     }
 
     stage('Build') {
