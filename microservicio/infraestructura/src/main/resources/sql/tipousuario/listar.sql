@@ -1,0 +1,1 @@
+select idTipoUsuario, tipoUsuario from tipo_usuario

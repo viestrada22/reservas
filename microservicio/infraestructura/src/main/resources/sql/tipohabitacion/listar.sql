@@ -1,0 +1,1 @@
+select idTipoHabitacion, tipoHabitacion from tipo_habitacion

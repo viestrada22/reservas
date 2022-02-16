@@ -1,0 +1,1 @@
+select count(1) from reserva where identificacionUsuario = :identificacionUsuario and fechaCreacion = :fechaCreacion
