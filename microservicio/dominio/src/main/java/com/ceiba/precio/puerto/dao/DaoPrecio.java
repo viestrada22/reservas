@@ -10,4 +10,11 @@ public interface DaoPrecio {
      * @return retorna la lista de precios
      */
     List<DtoPrecio> listar();
-}
+
+    /**
+     * Permite listar el precio para un tipo de habitación en específico
+     * @param idTipoHabitacion id tipo habitacion
+     * @return retorna la lista con un elemento
+     */
+    List<DtoPrecio> listarPorIdTipoHabitacion(Long idTipoHabitacion);
+ }

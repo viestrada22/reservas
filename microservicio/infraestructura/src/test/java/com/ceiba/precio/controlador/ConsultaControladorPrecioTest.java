@@ -1,4 +1,4 @@
-package com.ceiba.tipohabitacion.controlador;
+package com.ceiba.precio.controlador;
 
 import com.ceiba.ApplicationMock;
 import org.junit.jupiter.api.DisplayName;
@@ -19,24 +19,39 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @ExtendWith(SpringExtension.class)
-@WebMvcTest(ConsultaControladorTipoHabitacion.class)
-@ContextConfiguration(classes= ApplicationMock.class)
+@WebMvcTest(ConsultaControladorPrecio.class)
+@ContextConfiguration(classes = ApplicationMock.class)
 @DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_EACH_TEST_METHOD)
-public class ConsultaControladorTipoHabitacionTest {
+public class ConsultaControladorPrecioTest {
 
     @Autowired
     private MockMvc mockMvc;
 
     @Test
-    @DisplayName("Deberia listar las habitaciones")
-    void deberiaListarTipoHabitaciones() throws Exception {
-        //arrange
-        //act - assert
-        mockMvc.perform(get("/tipohabitacion")
-                .contentType(MediaType.APPLICATION_JSON))
+    @DisplayName("Deberia listar los precios de las habitaciones")
+    void deberiaListarLosPreciosDeLasHabitaciones() throws Exception {
+        // arrange
+        // act - assert
+        mockMvc.perform(get("/precios")
+                        .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$", hasSize(3)))
-                .andExpect(jsonPath("$[0].tipoHabitacion", is("sencilla")))
+                .andExpect(jsonPath("$[0].precioSemana", is(180000)))
                 .andExpect(jsonPath("$[0].id", is(1)));
+    }
+
+    @Test
+    @DisplayName("Deberia listar el precio de una habitación en especifico")
+    void deberiaListarPreciosPorIdTipoHabitacion() throws Exception {
+        // arrange
+        Long idTipoHabitacion = 1L;
+        // act - assert
+        mockMvc.perform(get("/precios/{idTipoHabitacion}", idTipoHabitacion)
+                        .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$", hasSize(1)))
+                .andExpect(jsonPath("$[0].precioSemana", is(180000)))
+                .andExpect(jsonPath("$[0].id", is(1)));
+
     }
 }
