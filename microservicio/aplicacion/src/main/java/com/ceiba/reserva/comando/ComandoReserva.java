@@ -13,12 +13,12 @@ import java.time.LocalDate;
 @NoArgsConstructor
 public class ComandoReserva {
 
-    private Long idReserva;
+    private Long id;
     private String identificacionUsuario;
     private String nombreUsuario;
     private LocalDate fechaReserva;
     private LocalDate fechaCreacion;
-    private int valorAPagar;
+    private Long valorAPagar;
     private Long idTipoHabitacion;
     private Long idTipoUsuario;
 }

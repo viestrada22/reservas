@@ -6,4 +6,4 @@ set identificacionUsuario = :identificacionUsuario,
 	valorAPagar = :valorAPagar,
 	idTipoHabitacion = :idTipoHabitacion,
 	idTipoUsuario = :idTipoUsuario
-where idReserva = :idReserva
+where id = :id

@@ -1,1 +1,1 @@
-select idTipoHabitacion, tipoHabitacion from tipo_habitacion
+select id, tipoHabitacion from tipo_habitacion

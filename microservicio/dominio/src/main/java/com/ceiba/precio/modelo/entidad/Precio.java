@@ -7,14 +7,14 @@ import static com.ceiba.dominio.ValidadorArgumento.validarObligatorio;
 @Getter
 public class Precio {
 
-    private Long idPrecio;
+    private Long id;
     private int precioSemana;
     private int precioFinDeSemana;
     private Long idTipoHabitacion;
 
-    public Precio(Long idPrecio, int precioSemana, int precioFinDeSemana, Long idTipoHabitacion) {
+    public Precio(Long id, int precioSemana, int precioFinDeSemana, Long idTipoHabitacion) {
         validarObligatorio(idTipoHabitacion, "");
-        this.idPrecio = idPrecio;
+        this.id = id;
         this.precioSemana = precioSemana;
         this.precioFinDeSemana = precioFinDeSemana;
         this.idTipoHabitacion = idTipoHabitacion;

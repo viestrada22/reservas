@@ -34,14 +34,14 @@ public class ComandoControladorReserva {
         return manejadorCrearReserva.ejecutar(comandoReserva);
     }
 
-    @DeleteMapping(value = "/{idReserva}")
+    @DeleteMapping(value = "/{id}")
     @ApiOperation("Eliminar reserva")
-    public void eliminar(@PathVariable Long idReserva) { manejadorEliminarReserva.ejecutar(idReserva); }
+    public void eliminar(@PathVariable Long id) { manejadorEliminarReserva.ejecutar(id); }
 
-    @PutMapping(value = "/{idReserva}")
+    @PutMapping(value = "/{id}")
     @ApiOperation("Actualziar reserva")
-    public void actualizar(@RequestBody ComandoReserva comandoReserva, @PathVariable Long idReserva) {
-        comandoReserva.setIdReserva(idReserva);
+    public void actualizar(@RequestBody ComandoReserva comandoReserva, @PathVariable Long id) {
+        comandoReserva.setId(id);
         manejadorActualizarReserva.ejecutar(comandoReserva);
     }
 

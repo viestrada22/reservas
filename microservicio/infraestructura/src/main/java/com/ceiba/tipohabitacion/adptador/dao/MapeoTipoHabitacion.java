@@ -10,8 +10,8 @@ import java.sql.SQLException;
 public class MapeoTipoHabitacion implements RowMapper<DtoTipoHabitacion>, MapperResult {
     @Override
     public DtoTipoHabitacion mapRow(ResultSet resultSet, int rowNum) throws SQLException {
-        Long idTipoHabitacion = resultSet.getLong("idTipoHabitacion");
+        Long id = resultSet.getLong("id");
         String tipoHabitacion = resultSet.getString("tipoHabitacion");
-        return new DtoTipoHabitacion(idTipoHabitacion, tipoHabitacion);
+        return new DtoTipoHabitacion(id, tipoHabitacion);
     }
 }

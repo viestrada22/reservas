@@ -6,6 +6,6 @@ import lombok.Getter;
 @Getter
 @AllArgsConstructor
 public class DtoTipoHabitacion {
-    private Long idTipoHabitacion;
+    private Long id;
     private String tipoHabitacion;
 }

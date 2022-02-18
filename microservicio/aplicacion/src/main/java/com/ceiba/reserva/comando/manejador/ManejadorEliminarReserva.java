@@ -14,5 +14,5 @@ public class ManejadorEliminarReserva implements ManejadorComando<Long> {
     }
 
     @Override
-    public void ejecutar(Long idReserva) { this.servicioEliminarReserva.ejecutar(idReserva); }
+    public void ejecutar(Long id) { this.servicioEliminarReserva.ejecutar(id); }
 }

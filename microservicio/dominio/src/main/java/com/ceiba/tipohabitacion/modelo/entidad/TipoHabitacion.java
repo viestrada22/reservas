@@ -7,12 +7,12 @@ import static com.ceiba.dominio.ValidadorArgumento.validarObligatorio;
 @Getter
 public class TipoHabitacion {
     private static final String TIPO_HABITACION_OBLIGATORIO = "El tipo de habitación es obligatorio";
-    private final Long idTipoHabitacion;
+    private final Long id;
     private final String tipoHabitacion;
 
-    public TipoHabitacion(Long idTipoHabitacion, String tipoHabitacion) {
+    public TipoHabitacion(Long id, String tipoHabitacion) {
         validarObligatorio(tipoHabitacion, TIPO_HABITACION_OBLIGATORIO);
-        this.idTipoHabitacion = idTipoHabitacion;
+        this.id = id;
         this.tipoHabitacion = tipoHabitacion;
     }
 }

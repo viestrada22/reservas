@@ -20,9 +20,9 @@ public interface RepositorioReserva {
 
     /**
      * Permite eliminar una reserva
-     * @param idReserva id de la reserva
+     * @param id id de la reserva
      */
-    void eliminar(Long idReserva);
+    void eliminar(Long id);
 
     /**
      * Permite validar si ya existe una reserva hecha por el usuario el mismo día
@@ -34,8 +34,8 @@ public interface RepositorioReserva {
 
     /**
      * Permite validar si una reserva en específico existe
-     * @param idReserva id de la reserva
+     * @param id id de la reserva
      * @return retorna un true o false
      */
-    boolean existePorId(Long idReserva);
+    boolean existePorId(Long id);
 }

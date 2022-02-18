@@ -18,16 +18,16 @@ public class Reserva {
     private static final String SE_DEBE_INGRESAR_EL_ID_TIPO_USUARIO = "Se debe ingresar el tipo de usuario";
 
 
-    private Long idReserva;
+    private Long id;
     private String identificacionUsuario;
     private String nombreUsuario;
     private LocalDate fechaReserva;
     private LocalDate fechaCreacion;
-    private int valorAPagar;
+    private Long valorAPagar;
     private Long idTipoHabitacion;
     private Long idTipoUsuario;
 
-    public Reserva(Long idReserva, String identificacionUsuario, String nombreUsuario, LocalDate fechaReserva, LocalDate fechaCreacion, int valorAPagar, Long idTipoHabitacion, Long idTipoUsuario) {
+    public Reserva(Long id, String identificacionUsuario, String nombreUsuario, LocalDate fechaReserva, LocalDate fechaCreacion, Long valorAPagar, Long idTipoHabitacion, Long idTipoUsuario) {
         validarObligatorio(identificacionUsuario, SE_DEBE_INGRESAR_LA_IDENTIFICACION_DEL_USUARIO);
         validarObligatorio(nombreUsuario, SE_DEBE_INGRESAR_EL_NOMBRE_DE_USUARIO);
         validarObligatorio(fechaReserva, SE_DEBE_INGRESAR_LA_FECHA_DE_RESERVA);
@@ -36,7 +36,7 @@ public class Reserva {
         validarObligatorio(idTipoHabitacion, SE_DEBE_INGRESAR_EL_ID_TIPO_HABITACION);
         validarObligatorio(idTipoUsuario, SE_DEBE_INGRESAR_EL_ID_TIPO_USUARIO);
 
-        this.idReserva = idReserva;
+        this.id = id;
         this.identificacionUsuario = identificacionUsuario;
         this.nombreUsuario = nombreUsuario;
         this.fechaReserva = fechaReserva;

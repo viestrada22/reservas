@@ -1,1 +1,1 @@
-select idTipoUsuario, tipoUsuario from tipo_usuario
+select id, tipoUsuario from tipo_usuario

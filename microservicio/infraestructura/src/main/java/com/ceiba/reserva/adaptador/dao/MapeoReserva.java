@@ -13,14 +13,14 @@ public class MapeoReserva implements RowMapper<DtoReserva>, MapperResult {
     @Override
     public DtoReserva mapRow(ResultSet resultSet, int rowNum) throws SQLException {
 
-        Long idReserva = resultSet.getLong("idReserva");
+        Long id = resultSet.getLong("id");
         String identificacionUsuario = resultSet.getString("identificacionUsuario");
         String nombreUsuario = resultSet.getString("nombreUsuario");
         LocalDate fechaReserva = extraerLocalDate(resultSet, "fechaReserva");
         LocalDate fechaCreacion = extraerLocalDate(resultSet,"fechaCreacion");
-        int valorAPagar = resultSet.getInt("valorAPagar");
+        Long valorAPagar = resultSet.getLong("valorAPagar");
         Long idTipoHabitacion = resultSet.getLong("idTipoHabitacion");
         Long idTipoUsuario = resultSet.getLong("idTipoUsuario");
-        return new DtoReserva(idReserva, identificacionUsuario, nombreUsuario, fechaReserva, fechaCreacion, valorAPagar, idTipoHabitacion, idTipoUsuario);
+        return new DtoReserva(id, identificacionUsuario, nombreUsuario, fechaReserva, fechaCreacion, valorAPagar, idTipoHabitacion, idTipoUsuario);
     }
 }

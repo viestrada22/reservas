@@ -10,10 +10,10 @@ import java.sql.SQLException;
 public class MapeoPrecio implements RowMapper<DtoPrecio>, MapperResult {
     @Override
     public DtoPrecio mapRow(ResultSet resultSet, int rowNum) throws SQLException {
-        Long idPrecio = resultSet.getLong("idPrecio");
+        Long id = resultSet.getLong("id");
         int precioSemana = resultSet.getInt("precioSemana");
         int precioFinDeSemana = resultSet.getInt("precioFinDeSemana");
         Long idTipoHabitacion = resultSet.getLong("idTipoHabitacion");
-        return new DtoPrecio(idPrecio, precioSemana, precioFinDeSemana, idTipoHabitacion);
+        return new DtoPrecio(id, precioSemana, precioFinDeSemana, idTipoHabitacion);
     }
 }

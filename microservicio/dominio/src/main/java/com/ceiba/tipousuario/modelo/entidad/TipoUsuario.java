@@ -9,12 +9,12 @@ public class TipoUsuario {
 
     private static final String TIPO_USUARIO_OBLIGATORIO = "El tipo de usuario es obligatorio";
 
-    private final Long idTipoUsuario;
+    private final Long id;
     private final String tipoUsuario;
 
-    public TipoUsuario(Long idTipoUsuario, String tipoUsuario) {
+    public TipoUsuario(Long id, String tipoUsuario) {
         validarObligatorio(tipoUsuario, TIPO_USUARIO_OBLIGATORIO);
-        this.idTipoUsuario = idTipoUsuario;
+        this.id = id;
         this.tipoUsuario = tipoUsuario;
     }
 }

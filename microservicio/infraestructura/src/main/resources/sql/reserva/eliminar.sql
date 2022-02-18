@@ -1,1 +1,1 @@
-delete from reserva where idReserva = :idReserva
+delete from reserva where id = :id

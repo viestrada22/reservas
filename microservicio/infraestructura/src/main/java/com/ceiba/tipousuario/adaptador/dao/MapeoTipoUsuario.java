@@ -11,8 +11,8 @@ public class MapeoTipoUsuario implements RowMapper<DtoTipoUsuario>, MapperResult
 
     @Override
     public DtoTipoUsuario mapRow(ResultSet resultSet, int rowNum) throws SQLException {
-        Long idTipoUsuario = resultSet.getLong("idTipoUsuario");
+        Long id = resultSet.getLong("id");
         String tipoUsuario = resultSet.getString("tipoUsuario");
-        return new DtoTipoUsuario(idTipoUsuario, tipoUsuario);
+        return new DtoTipoUsuario(id, tipoUsuario);
     }
 }

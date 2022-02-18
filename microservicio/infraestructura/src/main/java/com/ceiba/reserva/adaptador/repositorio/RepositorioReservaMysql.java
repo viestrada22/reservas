@@ -42,9 +42,9 @@ public class RepositorioReservaMysql implements RepositorioReserva {
     }
 
     @Override
-    public void eliminar(Long idReserva) {
+    public void eliminar(Long id) {
         MapSqlParameterSource paramSource = new MapSqlParameterSource();
-        paramSource.addValue("idReserva", idReserva);
+        paramSource.addValue("id", id);
 
         this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().update(sqlEliminar, paramSource);
     }
@@ -59,9 +59,9 @@ public class RepositorioReservaMysql implements RepositorioReserva {
     }
 
     @Override
-    public boolean existePorId(Long idReserva) {
+    public boolean existePorId(Long id) {
         MapSqlParameterSource paramSource = new MapSqlParameterSource();
-        paramSource.addValue("idReserva", idReserva);
+        paramSource.addValue("id", id);
 
         return Boolean.TRUE.equals(this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlExistePorId, paramSource, Boolean.class));
     }

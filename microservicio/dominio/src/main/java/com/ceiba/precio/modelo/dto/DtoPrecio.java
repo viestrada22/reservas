@@ -10,7 +10,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 public class DtoPrecio {
-    private Long idPrecio;
+    private Long id;
     private int precioSemana;
     private int precioFinDeSemana;
     private Long idTipoHabitacion;

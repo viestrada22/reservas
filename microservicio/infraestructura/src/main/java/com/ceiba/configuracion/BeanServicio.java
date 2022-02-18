@@ -40,8 +40,8 @@ public class BeanServicio {
     }
 
     @Bean
-    public ServicioActualizarReserva servicioActualizarReserva(RepositorioReserva repositorioReserva) {
-        return new ServicioActualizarReserva(repositorioReserva);
+    public ServicioActualizarReserva servicioActualizarReserva(RepositorioReserva repositorioReserva, ServicioCrearReserva servicioCrearReserva) {
+        return new ServicioActualizarReserva(repositorioReserva, servicioCrearReserva);
     }
 	
 

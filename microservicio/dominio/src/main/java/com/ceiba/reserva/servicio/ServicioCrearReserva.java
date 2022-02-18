@@ -40,26 +40,26 @@ public class ServicioCrearReserva {
         }
     }
 
-    private void validarFechaDeReservaParaUsuariosTipoCasual(Reserva reserva) {
+    protected void validarFechaDeReservaParaUsuariosTipoCasual(Reserva reserva) {
         if (Objects.equals(reserva.getIdTipoUsuario(), CASUAL) && (reserva.getFechaReserva().getDayOfWeek() == DayOfWeek.SATURDAY || reserva.getFechaReserva().getDayOfWeek() == DayOfWeek.SUNDAY)) {
             throw new ExcepcionValorInvalido(EL_USUARIO_NO_PUEDE_HACER_RESERVAS_FINES_DE_SEMANA);
         }
     }
 
-    private void validarFechaDeReservaParaUsuariosTipoFrecuente(Reserva reserva) {
+    protected void validarFechaDeReservaParaUsuariosTipoFrecuente(Reserva reserva) {
         if (Objects.equals(reserva.getIdTipoUsuario(), FRECUENTE) && reserva.getFechaReserva().getDayOfWeek() == DayOfWeek.SUNDAY) {
             throw new ExcepcionValorInvalido(EL_USUARIO_NO_PUEDE_HACER_RESERVAS_PARA_LOS_DOMINGOS);
         }
     }
 
-    private void validarFechaDeCreacionParaUsuariosCasualYFrecuente(Reserva reserva) {
+    protected void validarFechaDeCreacionParaUsuariosCasualYFrecuente(Reserva reserva) {
         if ((Objects.equals(reserva.getIdTipoUsuario(), CASUAL) || Objects.equals(reserva.getIdTipoUsuario(), FRECUENTE)) &&
                 (reserva.getFechaCreacion().getDayOfWeek() == DayOfWeek.SATURDAY || reserva.getFechaCreacion().getDayOfWeek() == DayOfWeek.SUNDAY)) {
             throw new ExcepcionValorInvalido(EL_USUARIO_NO_TIENE_PERMITIDO_HACER_RESERVAS_FINES_DE_SEMANA);
         }
     }
 
-    private void validarQueLaFechaDeReservaSeaMayorALaFechaActual(Reserva reserva) {
+    protected void validarQueLaFechaDeReservaSeaMayorALaFechaActual(Reserva reserva) {
         if (reserva.getFechaReserva().isEqual(reserva.getFechaCreacion()) || reserva.getFechaReserva().isBefore(reserva.getFechaCreacion())) {
             throw new ExcepcionValorInvalido(LA_FECHA_DE_RESERVA_DEBE_SER_MAYOR_A_LA_FECHA_ACTUAL);
         }

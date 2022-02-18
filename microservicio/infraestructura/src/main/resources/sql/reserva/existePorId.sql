@@ -1,1 +1,1 @@
-select count(1) from reserva where idReserva = :idReserva
+select count(1) from reserva where id = :id
