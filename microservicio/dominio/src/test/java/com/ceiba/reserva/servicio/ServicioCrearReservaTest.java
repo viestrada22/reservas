@@ -92,6 +92,7 @@ public class ServicioCrearReservaTest {
         Long id = servicioCrearReserva.ejecutar(reserva);
         // assert
         assertEquals(6L, id);
+        assertEquals(520000, reserva.getValorAPagar());
         Mockito.verify(repositorioReserva, Mockito.times(1)).crear(reserva);
     }
 

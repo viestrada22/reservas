@@ -17,6 +17,8 @@ public class ServicioCrearReserva {
 
     private static final Long CASUAL = 1L;
     private static final Long FRECUENTE = 2L;
+    private static final Long MIEMBRO = 3L;
+    private static final Long SUITE = 3L;
 
     private final RepositorioReserva repositorioReserva;
 
@@ -30,6 +32,7 @@ public class ServicioCrearReserva {
         validarLimiteDeReservas(reserva);
         validarFechaDeReservaParaUsuariosTipoCasual(reserva);
         validarFechaDeReservaParaUsuariosTipoFrecuente(reserva);
+        aplicarDescuento(reserva);
         return this.repositorioReserva.crear(reserva);
     }
 
@@ -62,6 +65,15 @@ public class ServicioCrearReserva {
     protected void validarQueLaFechaDeReservaSeaMayorALaFechaActual(Reserva reserva) {
         if (reserva.getFechaReserva().isEqual(reserva.getFechaCreacion()) || reserva.getFechaReserva().isBefore(reserva.getFechaCreacion())) {
             throw new ExcepcionValorInvalido(LA_FECHA_DE_RESERVA_DEBE_SER_MAYOR_A_LA_FECHA_ACTUAL);
+        }
+    }
+
+    protected void aplicarDescuento(Reserva reserva) {
+        if ((reserva.getFechaReserva().getDayOfWeek() == DayOfWeek.SUNDAY || reserva.getFechaReserva().getDayOfWeek() == DayOfWeek.SATURDAY) &&
+                Objects.equals(reserva.getIdTipoUsuario(), MIEMBRO) && Objects.equals(reserva.getIdTipoHabitacion(), SUITE)) {
+            reserva.setValorAPagar((long) (reserva.getValorAPagar() - (reserva.getValorAPagar() * 0.20)));
+        } else if (Objects.equals(reserva.getIdTipoUsuario(), MIEMBRO) && Objects.equals(reserva.getIdTipoHabitacion(), SUITE)) {
+            reserva.setValorAPagar((long) (reserva.getValorAPagar() - (reserva.getValorAPagar() * 0.20)));
         }
     }
 }

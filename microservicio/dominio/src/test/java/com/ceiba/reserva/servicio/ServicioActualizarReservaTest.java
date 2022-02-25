@@ -47,6 +47,7 @@ public class ServicioActualizarReservaTest {
         // act
         servicioActualizarReserva.ejecutar(reserva);
         // assert
+        assertEquals(520000, reserva.getValorAPagar());
         Mockito.verify(repositorioReserva, Mockito.times(1)).actualizar(reserva);
     }
 }

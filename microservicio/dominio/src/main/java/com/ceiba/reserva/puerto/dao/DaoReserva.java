@@ -15,5 +15,5 @@ public interface DaoReserva {
      * permite listar reservas por identificación de usuario
      * @return retorna lista de reservas por identifiacionUsuario
      */
-    List<DtoReserva> listarPorIdentificacionUsuario(String identificacionUsuario);
+    List<DtoReserva> listarPorId(Long id);
  }

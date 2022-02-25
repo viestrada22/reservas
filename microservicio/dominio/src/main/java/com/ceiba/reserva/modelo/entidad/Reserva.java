@@ -1,6 +1,7 @@
 package com.ceiba.reserva.modelo.entidad;
 
 import lombok.Getter;
+import lombok.Setter;
 
 import java.time.LocalDate;
 
@@ -23,6 +24,7 @@ public class Reserva {
     private String nombreUsuario;
     private LocalDate fechaReserva;
     private LocalDate fechaCreacion;
+    @Setter
     private Long valorAPagar;
     private Long idTipoHabitacion;
     private Long idTipoUsuario;
@@ -31,8 +33,6 @@ public class Reserva {
         validarObligatorio(identificacionUsuario, SE_DEBE_INGRESAR_LA_IDENTIFICACION_DEL_USUARIO);
         validarObligatorio(nombreUsuario, SE_DEBE_INGRESAR_EL_NOMBRE_DE_USUARIO);
         validarObligatorio(fechaReserva, SE_DEBE_INGRESAR_LA_FECHA_DE_RESERVA);
-        validarObligatorio(fechaCreacion, SE_DEBE_INGRESAR_LA_FECHA_CREACION);
-        validarObligatorio(valorAPagar, SE_DEBE_INGRESAR_EL_VALOR_A_PAGAR);
         validarObligatorio(idTipoHabitacion, SE_DEBE_INGRESAR_EL_ID_TIPO_HABITACION);
         validarObligatorio(idTipoUsuario, SE_DEBE_INGRESAR_EL_ID_TIPO_USUARIO);
 

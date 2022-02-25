@@ -23,6 +23,7 @@ public class ServicioActualizarReserva {
         this.servicioCrearReserva.validarFechaDeCreacionParaUsuariosCasualYFrecuente(reserva);
         this.servicioCrearReserva.validarFechaDeReservaParaUsuariosTipoCasual(reserva);
         this.servicioCrearReserva.validarFechaDeReservaParaUsuariosTipoFrecuente(reserva);
+        this.servicioCrearReserva.aplicarDescuento(reserva);
         this.repositorioReserva.actualizar(reserva);
     }
 

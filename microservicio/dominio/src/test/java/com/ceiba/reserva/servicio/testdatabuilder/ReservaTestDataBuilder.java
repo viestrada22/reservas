@@ -20,8 +20,8 @@ public class ReservaTestDataBuilder {
         nombreUsuario = "test1";
         fechaReserva = LocalDate.now().plusDays(2);
         fechaCreacion = LocalDate.now();
-        valorAPagar = 260000L;
-        idTipoHabitacion = 1L;
+        valorAPagar = 650000L;
+        idTipoHabitacion = 3L;
         idTipoUsuario = 3L;
     }
 
